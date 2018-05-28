@@ -1,0 +1,131 @@
+/*fonts start*/
+@font-face {
+     font-family: 'futuraBt';
+     src: url('../fonts/futural-webfont.eot');
+     src: url('../fonts/futural-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/futural-webfont.woff2') format('woff2'), url('../fonts/futural-webfont.woff') format('woff'), url('../fonts/futural-webfont.ttf') format('truetype'), url('../fonts/futural-webfont.svg#Lato-Regular') format('svg');
+}
+@font-face {
+  font-family: 'futuraBt-medium';
+  src: url('../fonts/FuturaBT-Medium.eot');
+  src: url('../fonts/FuturaBT-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/FuturaBT-Medium.woff2') format('woff2'), url('../fonts/FuturaBT-Medium.woff') format('woff'), url('../fonts/FuturaBT-Medium.ttf') format('truetype'), url('../fonts/FuturaBT-Medium.svg#Lato-Regular') format('svg');
+}
+@font-face {
+  font-family: 'futuraBt-light';
+  src: url('../fonts/FuturaBT-Light.eot');
+  src: url('../fonts/FuturaBT-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/FuturaBT-Light.woff2') format('woff2'), url('../fonts/FuturaBT-Light.woff') format('woff'), url('../fonts/FuturaBT-Light.ttf') format('truetype'), url('../fonts/FuturaBT-Light.svg#Lato-Regular') format('svg');
+}
+
+/*fonts end*/
+/* ============================== 2. Global styles ============================== */
+body {
+  font-family: 'futuraBt', sans-serif;
+  color: #353535;
+  font-size: 15px;
+  background: #fff;
+}
+h1, h2, h3, h4, h5, h6, p, ul {
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'futuraBt', sans-serif;
+  font-weight: normal;
+}
+ul, li {
+  list-style-type: none;
+  display: inline-block 
+}
+p, span {
+  color: #353535;
+  font-size: 15px;
+  font-weight: 300;
+}
+:root {
+--pri-color: #c21155;
+--text-color:#353535;
+--text-white:#ffffff;
+--font-normal: 'futuraBt', sans-serif;
+--font-medium:'futuraBt-medium', sans-serif;
+--font-ligth:'futuraBt-ligth', sans-serif;
+--grey-bg:#f1f1f1;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+}
+a:hover, a:focus, a:visited {
+  text-decoration: none;
+  outline: none;
+}
+img {
+  max-width: 100%;
+  display: inline-block;
+}
+button {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  display: block;
+  padding: 0;
+  background: transparent;
+}
+input, textarea {
+  font-family: 'Hind', sans-serif;
+  display: block;
+  font-size: 16px;
+  line-height: 28px;
+  outline: none;
+  box-shadow: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.btns {
+  display: inline-block;
+ padding: 2px 10px;
+  background: #ffffff;
+  color:var(--pri-color);
+  font-size: 15px;
+}
+.btns:hover{
+
+}
+
+/*Header styling*/
+header {
+  padding: 20px 0;
+}
+header h1{
+  display: inline-block;
+  font-size: 16px;
+  color: var(--pri-color);
+  text-transform: uppercase;
+  font-family: 'futuraBt-medium';
+}
+header a{
+  color: var(--pri-color);
+}
+.axislogo {
+  display: inline-block;
+}
+.logo a {
+  font-size: 32px;
+  text-transform: uppercase;
+}
+.banner{
+  position: relative;
+  width: 70%;
+  float: left;
+}
+.videoLink{
+  width: 30%;
+  float: right;
+}
+.humburger{
+  display: none;
+
+}
+/*banner*/
+.banner {
+  position: relative;
+}
