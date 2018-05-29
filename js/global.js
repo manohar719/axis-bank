@@ -1,3 +1,5 @@
+//object lateral pattern
+
 var winW = $(window).width();
 
 var carousel = {
@@ -59,86 +61,59 @@ var carousel = {
 
 };
 
+var tabs = {
+     config: {
+        wrapper: '.tab-wrapper',
+        tab: '.js-tabs li',
+        content: '.tab-content .content'
+
+    },
+    init: function(config) {
+        $.extend(tabs.config, config);
+        this.click();
+    },
+    click: function(){
+         $(tabs.config.tab).on('click',function(){
+           var index = $(this).index();
+            $(this).addClass('active').siblings().removeClass('active');
+            $(tabs.config.content).hide();
+            $(this).parents(tabs.config.wrapper).find(tabs.config.content).eq(index).fadeIn('slow');
+        })
+    }       
+}
+
+
+
 $(document).ready(function() {
 
-    if ($('.owlCarousel').length) {
+    if ($('.owl-carousel').length) {
         carousel.init({
-            items: 3,
+             wrapper: '.frauds-carousel',
+            items: 2,
             margin: 10,
-            navText: ["<img src='images/back.png'>","<img src='images/next.png'>"],
+            navText: ["<img src='images/right-arrow.png'>","<img src='images/right-arrow.png'>"],
             autoplay: false,
             responsive: true,
-            desktop:3,
+            desktop:2,
             mobile:1
         })
     }
-    if($('.info-carousel').length && winW < 768){
-        
-        carousel.init({
-            wrapper: '.info-carousel',
-            items: 1,
-            margin: 10,
-            navText: ["<img src='images/back.png'>","<img src='images/next.png'>"],
-            autoplay: false
-        })
+    if($('.js-tabs').length){
+        tabs.init();
     }
-    if($('.stu-carousel').length && winW <768){
-        carousel.init({
-            wrapper: '.stu-carousel',
-            items: 1,
-            margin: 10,
-            navText: ["<img src='images/back.png'>","<img src='images/next.png'>"],
-            autoplay: false
-        })
-    }
-
-    if($('.humburger').length && winW <768){
-        $('.humburger').click(function(){
+    if($('.humburger').length){
+        $('.humburger').on('click',function(){
             $(this).toggleClass('open');
-            $('.main-navigation').slideToggle();
-        });
+            $('.megaMenu').slideToggle();
+        })
     }
-    $('.js-popup').click(function() {
-        var target = $(this).attr('data-target');
-        $('.'+target).addClass('open');
-        $('.page-wrapper').addClass('blur');
-        return false;
-    });
 
-    $('.js-closePopup').click(function(){
-        if($(this).parents('.modal-wrapper').hasClass('open')){
-            $(this).parents('.modal-wrapper').removeClass('open');
-            $('.page-wrapper').removeClass('blur');
-        }
-    });
 });
 
 
 
 
 
-// accordian
-$('.accordion-toggle').on('click', function() {
-    $(this).closest('.panel-group').children().each(function() {
-        $(this).find('>.panel-heading').removeClass('active');
-    });
-
-    $(this).closest('.panel-heading').toggleClass('active');
-});
-
-//Initiat WOW JS
-// new WOW().init();
-
-// portfolio filter
 $(window).load(function() {
 
-});
-
-
-//goto top
-$('.gototop').click(function(event) {
-    event.preventDefault();
-    $('html, body').animate({
-        scrollTop: $("body").offset().top
-    }, 500);
 });
